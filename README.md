@@ -2,15 +2,11 @@
 ![Java](https://img.shields.io/badge/MAVEN-0074D9?style=for-the-badge&labelColor=FFFFFF)
 ![Java](https://img.shields.io/badge/LOMBOK-E53935?style=for-the-badge&labelColor=FFFFFF)
 
-A Java-based employee management system developed as a technical test for **Projedata Informática**.
-
----
+A Java-based employee management system developed as a technical test for **Projedata**.
 
 ## Project Overview
 
 This project simulates a small employee management system for an industry, featuring core object-oriented concepts and data processing in Java. The system enables management and reporting of employee data, salary updates, grouping, and various queries, all via a simple command-line interface.
-
----
 
 ## Features
 
@@ -30,8 +26,6 @@ This project simulates a small employee management system for an industry, featu
 - Print the sum of all employees' salaries.
 - Print how many minimum wages each employee earns (minimum wage: R$1.518,00).
 
----
-
 ## Tech Stack
 
 - Java 21
@@ -40,8 +34,6 @@ This project simulates a small employee management system for an industry, featu
 - Git
 
 **IDE:** Developed using [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-
----
 
 ## How to Run
 
