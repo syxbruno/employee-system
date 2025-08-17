@@ -1,6 +1,6 @@
 ![Java](https://img.shields.io/badge/JAVA-E65100?style=for-the-badge&labelColor=FFFFFF)
-![Java](https://img.shields.io/badge/MAVEN-0074D9?style=for-the-badge&labelColor=FFFFFF)
-![Java](https://img.shields.io/badge/LOMBOK-E53935?style=for-the-badge&labelColor=FFFFFF)
+![Maven](https://img.shields.io/badge/MAVEN-0074D9?style=for-the-badge&labelColor=FFFFFF)
+![Lombok](https://img.shields.io/badge/LOMBOK-E53935?style=for-the-badge&labelColor=FFFFFF)
 
 A Java-based employee management system developed as a technical test for **Projedata**.
 
