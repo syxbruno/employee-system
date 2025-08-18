@@ -4,7 +4,7 @@ import com.syxbruno.employee_system.service.EmployeeService;
 
 public class EmployeeSystemApplication {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
     EmployeeService service = new EmployeeService();
 

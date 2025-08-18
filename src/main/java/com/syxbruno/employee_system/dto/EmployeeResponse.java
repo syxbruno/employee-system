@@ -19,4 +19,4 @@ public class EmployeeResponse {
 
     return "Name: " + name + ", Date Birth: " + dateBirth + ", Wage: " + wage + ", Function: " + function;
   }
- }
+}

@@ -15,7 +15,7 @@ public class Formatter {
 
   public synchronized static Formatter getInstance() {
 
-    if(Objects.isNull(instance)) {
+    if (Objects.isNull(instance)) {
 
       instance = new Formatter();
     }

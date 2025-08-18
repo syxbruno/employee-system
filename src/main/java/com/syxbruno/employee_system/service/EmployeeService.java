@@ -24,18 +24,17 @@ public class EmployeeService {
 
   public void addEmployees(String path) {
 
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
-    try(BufferedReader reader = new BufferedReader(new FileReader(path))) {
+    try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
 
       String line;
+      DateTimeFormatter standard = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-      while((line = reader.readLine()) != null) {
+      while ((line = reader.readLine()) != null) {
 
         String[] split = line.split(",");
 
         String name = split[0];
-        LocalDate dateBirth = LocalDate.parse(split[1], dateTimeFormatter);
+        LocalDate dateBirth = LocalDate.parse(split[1], standard);
         BigDecimal wage = new BigDecimal(split[2]);
         String function = split[3];
 
@@ -44,7 +43,7 @@ public class EmployeeService {
 
       System.out.println("Employees added to the list successfully");
 
-    } catch(IOException e) {
+    } catch (IOException e) {
 
       e.printStackTrace();
     }
@@ -55,7 +54,7 @@ public class EmployeeService {
 
     boolean removed = employees.removeIf(employee -> employee.getName().equalsIgnoreCase("Joao"));
 
-    if(removed) {
+    if (removed) {
 
       System.out.println("Employee Joao has been deleted from the list");
       return;
@@ -67,7 +66,7 @@ public class EmployeeService {
   public void printAllEmployees() {
 
     employees.stream()
-        .map(e -> mapper.employeeToEmployeeResponse(e))
+        .map(mapper::employeeToEmployeeResponse)
         .forEach(System.out::println);
   }
 
@@ -86,16 +85,14 @@ public class EmployeeService {
     Map<String, List<Employee>> map = employees.stream()
         .collect(Collectors.groupingBy(Employee::getFunction));
 
-    for(Map.Entry<String, List<Employee>> entry : map.entrySet()) {
+    for (Map.Entry<String, List<Employee>> entry : map.entrySet()) {
 
       String function = entry.getKey();
       System.out.println("Function: " + function);
 
-      for(Employee e : entry.getValue()) {
-
-        EmployeeResponse employeeResponse = mapper.employeeToEmployeeResponse(e);
-        System.out.println(employeeResponse);
-      }
+      entry.getValue().stream()
+          .map(mapper::employeeToEmployeeResponse)
+          .forEach(System.out::println);
     }
   }
 
@@ -108,7 +105,7 @@ public class EmployeeService {
 
           return month == 10 || month == 12;
         })
-        .map(e -> mapper.employeeToEmployeeResponse(e))
+        .map(mapper::employeeToEmployeeResponse)
         .forEach(System.out::println);
   }
 
@@ -145,7 +142,7 @@ public class EmployeeService {
 
     BigDecimal minWage = new BigDecimal("1518.00");
 
-    employees.stream()
+    employees
         .forEach(e -> {
 
           BigDecimal amout = e.getWage().divide(minWage, 2, RoundingMode.HALF_UP);

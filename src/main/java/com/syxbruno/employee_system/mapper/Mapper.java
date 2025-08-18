@@ -14,7 +14,7 @@ public class Mapper {
 
   public synchronized static Mapper getInstance() {
 
-    if(Objects.isNull(instance)) {
+    if (Objects.isNull(instance)) {
 
       instance = new Mapper();
     }
