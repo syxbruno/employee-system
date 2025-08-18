@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class EmployeeSystemService {
+public class EmployeeService {
 
   Mapper mapper = Mapper.getInstance();
   private final List<Employee> employees = new ArrayList<>();
@@ -44,7 +44,7 @@ public class EmployeeSystemService {
 
       System.out.println("Employees added to the list successfully");
 
-    } catch (IOException e) {
+    } catch(IOException e) {
 
       e.printStackTrace();
     }
@@ -55,7 +55,7 @@ public class EmployeeSystemService {
 
     boolean removed = employees.removeIf(employee -> employee.getName().equalsIgnoreCase("Joao"));
 
-    if (removed) {
+    if(removed) {
 
       System.out.println("Employee Joao has been deleted from the list");
       return;
@@ -66,20 +66,19 @@ public class EmployeeSystemService {
 
   public void printAllEmployees() {
 
-    for (Employee e : employees) {
-
-      EmployeeResponse employeeResponse = mapper.employeeToEmployeeResponse(e);
-      System.out.println(employeeResponse);
-    }
+    employees.stream()
+        .map(e -> mapper.employeeToEmployeeResponse(e))
+        .forEach(System.out::println);
   }
 
   public void applyIncrease() {
 
-    for (Employee e : employees) {
+    employees
+        .forEach(e -> {
 
-      BigDecimal wageIncreased = e.getWage().multiply(new BigDecimal("1.10"));
-      e.setWage(wageIncreased);
-    }
+          BigDecimal wageIncreased = e.getWage().multiply(new BigDecimal("1.10"));
+          e.setWage(wageIncreased);
+        });
   }
 
   public void printGroupsFunction() {
@@ -87,12 +86,12 @@ public class EmployeeSystemService {
     Map<String, List<Employee>> map = employees.stream()
         .collect(Collectors.groupingBy(Employee::getFunction));
 
-    for (Map.Entry<String, List<Employee>> entry : map.entrySet()) {
+    for(Map.Entry<String, List<Employee>> entry : map.entrySet()) {
 
       String function = entry.getKey();
       System.out.println("Function: " + function);
 
-      for (Employee e : entry.getValue()) {
+      for(Employee e : entry.getValue()) {
 
         EmployeeResponse employeeResponse = mapper.employeeToEmployeeResponse(e);
         System.out.println(employeeResponse);
@@ -102,41 +101,27 @@ public class EmployeeSystemService {
 
   public void printDateBirthOctDec() {
 
-    for (Employee e : employees) {
+    employees.stream()
+        .filter(e -> {
 
-      int month = e.getDateBirth().getMonthValue();
+          int month = e.getDateBirth().getMonthValue();
 
-      if (month == 10 || month == 12) {
-
-        EmployeeResponse employeeResponse = mapper.employeeToEmployeeResponse(e);
-        System.out.println(employeeResponse);
-      }
-    }
+          return month == 10 || month == 12;
+        })
+        .map(e -> mapper.employeeToEmployeeResponse(e))
+        .forEach(System.out::println);
   }
 
   public void printOldEmployee() {
 
-    if (employees.isEmpty()) {
-
-      System.out.println("The list is empty, add elements to the list to use this method");
-      return;
-    }
-
-    Employee old = employees.getFirst();
-
-    for (Employee e : employees) {
-
-      if (e.getDateBirth().isBefore(old.getDateBirth())) {
-
-        old = e;
-      }
-    }
+    Employee old = employees.stream()
+        .min(Comparator.comparing(Employee::getDateBirth))
+        .orElseThrow(() -> new RuntimeException("The list is empty, add elements to the list to use this method"));
 
     int years = Period.between(old.getDateBirth(), LocalDate.now()).getYears();
+    EmployeeResponse oldEmployee = mapper.employeeToEmployeeResponse(old);
 
-    System.out.println(
-        "Name: " + old.getName() + ", Age: " + years
-    );
+    System.out.println(oldEmployee + ", Age: " + years);
   }
 
   public void sortEmployees() {

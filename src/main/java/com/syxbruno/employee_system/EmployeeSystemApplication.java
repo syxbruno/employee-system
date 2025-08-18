@@ -1,15 +1,14 @@
 package com.syxbruno.employee_system;
 
-import com.syxbruno.employee_system.service.EmployeeSystemService;
+import com.syxbruno.employee_system.service.EmployeeService;
 
 public class EmployeeSystemApplication {
 
 	public static void main(String[] args) {
 
-    EmployeeSystemService service = new EmployeeSystemService();
+    EmployeeService service = new EmployeeService();
 
     service.addEmployees("src/main/resources/employees.txt");
-
     System.out.println("________________________________________");
     service.removeJoao();
     System.out.println("________________________________________");
