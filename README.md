@@ -29,8 +29,9 @@ This project simulates a small employee management system for an industry, featu
 ## Tech Stack
 
 - Java 21
-- Maven
+- JUnit
 - Lombok
+- Maven
 - Git
 
 **IDE:** Developed using [IntelliJ IDEA](https://www.jetbrains.com/idea/)
