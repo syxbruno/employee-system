@@ -2,8 +2,8 @@ package com.syxbruno.employee_system.utils;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class FormatterTest {
 
@@ -17,7 +17,7 @@ public class FormatterTest {
 
     String expected = "124.324,39";
 
-    Assert.assertEquals(expected, wageFormatted);
+    Assertions.assertEquals(expected, wageFormatted);
   }
 
   @Test
@@ -28,6 +28,6 @@ public class FormatterTest {
 
     String expected = "29/08/1999";
 
-    Assert.assertEquals(expected, dateFormatted);
+    Assertions.assertEquals(expected, dateFormatted);
   }
 }

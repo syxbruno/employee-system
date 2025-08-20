@@ -1,12 +1,15 @@
 package com.syxbruno.employee_system;
 
+import com.syxbruno.employee_system.model.Employee;
 import com.syxbruno.employee_system.service.EmployeeService;
+import java.util.ArrayList;
 
 public class EmployeeSystemApplication {
 
   public static void main(String[] args) {
 
-    EmployeeService service = new EmployeeService();
+    ArrayList<Employee> employees = new ArrayList<>();
+    EmployeeService service = new EmployeeService(employees);
 
     service.addEmployees("src/main/resources/employees.txt");
     System.out.println("________________________________________");

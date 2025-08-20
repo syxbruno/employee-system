@@ -1,0 +1,2 @@
+Maria,18-10-2000,2009.44,Operador
+Joao,12-05-1990,2284.38,Operador

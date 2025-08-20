@@ -11,16 +11,17 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class EmployeeService {
 
+  private final List<Employee> employees;
   Mapper mapper = Mapper.getInstance();
-  private final List<Employee> employees = new ArrayList<>();
 
   public void addEmployees(String path) {
 
@@ -45,7 +46,7 @@ public class EmployeeService {
 
     } catch (IOException e) {
 
-      e.printStackTrace();
+      throw new RuntimeException("Failed to read employees file: " + path, e);
     }
   }
 
@@ -150,4 +151,3 @@ public class EmployeeService {
         });
   }
 }
-

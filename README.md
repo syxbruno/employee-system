@@ -1,4 +1,5 @@
 ![Java](https://img.shields.io/badge/JAVA-E65100?style=for-the-badge&labelColor=FFFFFF)
+![JUnit](https://img.shields.io/badge/JUNIT-4CAF50?style=for-the-badge&labelColor=FFFFFF)
 ![Maven](https://img.shields.io/badge/MAVEN-0074D9?style=for-the-badge&labelColor=FFFFFF)
 ![Lombok](https://img.shields.io/badge/LOMBOK-E53935?style=for-the-badge&labelColor=FFFFFF)
 
@@ -36,7 +37,7 @@ This project simulates a small employee management system for an industry, featu
 
 **IDE:** Developed using [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
-## How to Run
+## How to Run Application
 
 1. **Clone the repository:**
    ```bash
@@ -51,6 +52,11 @@ This project simulates a small employee management system for an industry, featu
 
 3. **Run the Application:**
    ```bash
-   mvn exec:java -Dexec.mainClass="com.syxbruno.employee_system.EmployeeSystemApplication"
+   mvn clean compile exec:java
+   ```
+
+3. **Run the Tests:**
+   ```bash
+   mvn test
    ```
 

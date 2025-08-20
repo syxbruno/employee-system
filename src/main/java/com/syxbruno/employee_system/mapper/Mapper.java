@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Mapper {
 
-  Formatter formatter = Formatter.getInstance();
   private static Mapper instance;
+  Formatter formatter = Formatter.getInstance();
 
   public synchronized static Mapper getInstance() {
 

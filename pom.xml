@@ -13,8 +13,9 @@
   <properties>
     <java.version>21</java.version>
     <lombok.version>1.18.38</lombok.version>
+    <junit-jupiter-api.version>5.13.4</junit-jupiter-api.version>
+    <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-    <junit.version>4.13.2</junit.version>
   </properties>
 
   <dependencies>
@@ -26,9 +27,9 @@
     </dependency>
 
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter-api.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -48,6 +49,15 @@
               <version>${lombok.version}</version>
             </path>
           </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>com.syxbruno.employee_system.EmployeeSystemApplication</mainClass>
         </configuration>
       </plugin>
     </plugins>
