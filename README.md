@@ -27,7 +27,7 @@ Print employees sorted alphabetically by name.
 Print the sum of all employees' salaries.
 Print how many minimum wages each employee earns (minimum wage: R$1.518,00).
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category         | Technology                                     |
 |-----------------|------------------------------------------------|
@@ -37,7 +37,7 @@ Print how many minimum wages each employee earns (minimum wage: R$1.518,00).
 | Build Tool       | Maven                                          |
 | Version Control  | Git                                            |
 
-## ▶️ How to Run Application
+## How to Run Application
 
 1. **Clone the repository:**
    ```bash
