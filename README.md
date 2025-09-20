@@ -11,33 +11,33 @@ This project simulates a small employee management system for an industry, featu
 
 ## Features
 
-- **Person and Employee Classes:** `Person`: name and date of birth. `Employee` (extends `Person`): salary and job title.
+**Person and Employee Classes:** `Person`: name and date of birth. `Employee` (extends `Person`): salary and job title.
 
 
-- **Operations:**
-- Insert all employees from a given list.
-- Remove an employee named "João".
-- Print all employee details: Dates formatted as `dd/MM/yyyy`. Salaries formatted with thousand separators (`.`) and decimals as comma (`,`).
-- Apply a 10% salary increase to all employees.
-- Group employees by their job title in a `Map`.
-- Print employees grouped by job title.
-- Print employees with birthdays in October and December.
-- Print the oldest employee (name and age).
-- Print employees sorted alphabetically by name.
-- Print the sum of all employees' salaries.
-- Print how many minimum wages each employee earns (minimum wage: R$1.518,00).
+**Operations:**  
+Insert all employees from a given list.
+Remove an employee named "João".
+Print all employee details: Dates formatted as `dd/MM/yyyy`. Salaries formatted with thousand separators (`.`) and decimals as comma (`,`).
+Apply a 10% salary increase to all employees.
+Group employees by their job title in a `Map`.
+Print employees grouped by job title.
+Print employees with birthdays in October and December.
+Print the oldest employee (name and age).
+Print employees sorted alphabetically by name.
+Print the sum of all employees' salaries.
+Print how many minimum wages each employee earns (minimum wage: R$1.518,00).
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- Java 21
-- JUnit
-- Lombok
-- Maven
-- Git
+| Category         | Technology                                     |
+|-----------------|------------------------------------------------|
+| Language         | Java 21                                        |
+| Testing          | JUnit                                          |
+| Libraries        | Lombok                                         |
+| Build Tool       | Maven                                          |
+| Version Control  | Git                                            |
 
-**IDE:** Developed using [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-
-## How to Run Application
+## ▶️ How to Run Application
 
 1. **Clone the repository:**
    ```bash
